@@ -1,3 +1,4 @@
+
 def isPalindrome(str):
     # run loop from 0 to len/2
 

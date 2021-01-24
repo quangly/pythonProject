@@ -21,6 +21,10 @@ class TestMain(unittest.TestCase):
         res = main.isPalindrome(s1)
         self.assertEqual(res, True)
 
+    def test_isPalindromeFalse(self):
+        s1 = "mother"
+        res = main.isPalindrome(s1)
+        self.assertEqual(res, False)
 
 if __name__ == "__main__":
     unittest.main()
