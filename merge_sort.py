@@ -1,5 +1,7 @@
 # Merge Sort is a Divide and Conquer algorithm. It divides the input array into two halves, calls itself for the two halves, and then merges the two sorted halves. The merge() function is used for merging two halves. The merge(arr, l, m, r) is a key process that assumes that arr[l..m] and arr[m+1..r] are sorted and merges the two sorted sub-arrays into one. See the following C implementation for details.
-#
+#  Merge sort is more efficient and works faster than quick sort in case of larger
+#  array size or datasets. Quick sort is more efficient and works faster than merge
+#  sort in case of smaller array size or datasets
 # MergeSort(arr[], l,  r)
 # If r > l
 #      1. Find the middle point to divide the array into two halves:
