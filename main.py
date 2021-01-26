@@ -1,11 +1,20 @@
 
 def isPalindrome(str):
-    # run loop from 0 to len/2
 
     for i in range(0, int(len(str)/2)):
-        if str[i] != str[len(str) -i - 1]:
+        if str[i] != str[len(str) - i - 1]:
             return False
+
     return True
+
+
+
+    # # run loop from 0 to len/2
+    #
+    # for i in range(0, int(len(str)/2)):
+    #     if str[i] != str[len(str) -i - 1]:
+    #         return False
+    # return True
 
 """
 An efficient solution would need only one traversal i.e. O(n) on the longer string s1. Here we will start traversing the
@@ -72,5 +81,5 @@ if __name__ == "__main__":
     else:
         print("Present at index " + str(res))
 
-    res = isPalindrome("malayalam")
-    print("It is: " + str(res))
+    res = isPalindrome("racecar")
+    print("Palindrome: " + str(res))
