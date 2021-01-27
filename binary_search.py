@@ -4,33 +4,27 @@
 # It returns location of x in given array arr 
 # if present, else returns -1
 # Time complexity T(n) = T(n/2) + c
+#
 
-def binarySearch(arr, l, r, x):
+def binary_search(sequence, item):
+    begin_index = 0
+    end_index = len(sequence) - 1
 
-    while l <= r:
+    while begin_index <= end_index:
+        midpoint_index = begin_index + (end_index - begin_index) // 2
+        midpoint_value = sequence[midpoint_index]
 
-        mid = l + (r - 1) // 2
+        if midpoint_value == item:
+            return midpoint_index
 
-        # Check if x is present at mid
-        if arr[mid] == x:
-            return mid
-
-        # if x is greater, ignore left half
-        elif arr[mid] < x:
-            l = mid + 1
+        elif item < midpoint_value:
+            end_index = midpoint_index - 1
         else:
-            r = mid - 1
+            begin_index = midpoint_index + 1
 
-    # if we reach here, then element was not present
-    return -1
+    return None
 
-#  Driver code
-arr = [2,3,4,10,40]
-x = 10
+sequence_a = [2,4,5,6,7,8,9,10,12,13,14]
+item_a = 12
 
-result = binarySearch(arr, 0, len(arr) - 1, x)
-if result != -1:
-    print("Element is present at index % d" % result)
-else:
-    print("Element is not present in array")
-
+print(binary_search(sequence_a, item_a))
