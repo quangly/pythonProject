@@ -12,5 +12,5 @@ def bubble_sort(list_a):
     return list_a
 
 
-print(bubble_sort([2,1,4,5,0,9,7]))
+print(bubble_sort([4,8,1,14,8,2,9,5,7,6,6]))
 
