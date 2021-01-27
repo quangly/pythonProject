@@ -3,7 +3,7 @@
 
 # It returns location of x in given array arr 
 # if present, else returns -1
-# Time complexity T(n) = T(n/2) + c
+# Time complexity T(n) = T(n/2) = Log
 #
 
 def binary_search(sequence, item):

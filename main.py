@@ -43,25 +43,6 @@ def isSubstring(s2, s1):
         return i - x
 
 
-"""Time complexity: O(m * n) where m and n are lengths of s1 and s2 respectively.
-A nested loop is used the outer loop runs from 0 to N-M and inner loop from 0 to M so the complexity is O(m*n).
-"""
-def isSubstringOld(s1, s2):
-    lengthSub = len(s1)
-    lengthString = len(s2)
-
-    for i in range(lengthString - lengthSub +1):
-
-        for j in range(lengthSub):
-            if (s2[i + j] != s1[j]):
-                break
-
-        if (lengthSub == j + 1):
-            return i
-
-    return -1
-
-
 if __name__ == "__main__":
     s1 = "for"
     s2 = "geeksforgeeks"
