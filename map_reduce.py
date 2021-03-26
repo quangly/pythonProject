@@ -3,11 +3,12 @@ from functools import reduce
 mapper = len
 
 def reducer(p, c):
+    print(p, c)
     if p[1] > c[1]:
         return p
     return c
 
-list_of_strings = ['abc', 'python', 'dima']
+list_of_strings = ['crocadile','abc', 'python', 'dima']
 
 
 #step 1 compute the len of all strings
