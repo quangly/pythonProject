@@ -1,3 +1,4 @@
+import copy
 from functools import reduce
 mapper = len
 
@@ -11,10 +12,9 @@ list_of_strings = ['abc', 'python', 'dima']
 
 #step 1 compute the len of all strings
 mapped = map(mapper, list_of_strings)
+print("applied map: " + str(list(copy.deepcopy(mapped))))
 mapped = zip(list_of_strings, mapped)
-
+print("zip: " + str(list(copy.deepcopy(mapped))))
 #step 2 select the max value
 reduced = reduce(reducer, mapped)
-
-
 print(reduced)
