@@ -2,20 +2,40 @@ import copy
 from functools import reduce
 mapper = len
 
+def chunks(lst, n):
+    """Yield successive n-sized chunks from lst."""
+    for i in range(0, len(lst), n):
+        yield lst[i:i + n]
+
 def reducer(p, c):
     print(p, c)
     if p[1] > c[1]:
         return p
     return c
 
-list_of_strings = ['crocadile','abc', 'python', 'dima']
+def chunks_mapper(chunk):
+    mapped_chunk = map(mapper, chunk)
+    mapped_chunk = zip(chunk, mapped_chunk)
+    return reduce(reducer, mapped_chunk)
 
 
-#step 1 compute the len of all strings
-mapped = map(mapper, list_of_strings)
-print("applied map: " + str(list(copy.deepcopy(mapped))))
-mapped = zip(list_of_strings, mapped)
-print("zip: " + str(list(copy.deepcopy(mapped))))
-#step 2 select the max value
+list_of_strings = ['crocadile','abc', 'python', 'dima']*1000
+list_of_strings.append("xxxxxxxxxxxx")
+data_chunks = chunks(list_of_strings, 30)
+
+#step 1:
+mapped = map(chunks_mapper, data_chunks)
+#step 2:
 reduced = reduce(reducer, mapped)
+
+print("\n")
 print(reduced)
+
+
+# #step 1 compute the len of all strings
+# mapped = map(mapper, list_of_strings)
+# # print("applied map: " + str(list(copy.deepcopy(mapped))))
+# mapped = zip(list_of_strings, mapped)
+# # print("zip: " + str(list(copy.deepcopy(mapped))))
+# #step 2 select the max value
+# reduced = reduce(reducer, mapped)
