@@ -1,6 +1,9 @@
 import copy
+import time
 from functools import reduce
 mapper = len
+
+tic = time.perf_counter()
 
 def chunks(lst, n):
     """Yield successive n-sized chunks from lst."""
@@ -19,7 +22,7 @@ def chunks_mapper(chunk):
     return reduce(reducer, mapped_chunk)
 
 
-list_of_strings = ['crocadile','abc', 'python', 'dima']*1000
+list_of_strings = ['crocadile','abc', 'python', 'dima']*100
 list_of_strings.append("xxxxxxxxxxxx")
 data_chunks = chunks(list_of_strings, 30)
 
@@ -30,6 +33,9 @@ reduced = reduce(reducer, mapped)
 
 print("\n")
 print(reduced)
+
+toc = time.perf_counter()
+print(f"Downloaded the tutorial in {toc - tic:0.8f} seconds")
 
 
 # #step 1 compute the len of all strings
