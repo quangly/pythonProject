@@ -31,3 +31,6 @@ print(string, "-", check(string))
 
 string = "((()"
 print(string, "-", check(string))
+
+string = "{[asdf]{(abc)}}"
+print(string, "-", check(string))
