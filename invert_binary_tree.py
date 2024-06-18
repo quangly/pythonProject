@@ -26,16 +26,18 @@ def printTree(root, level=0, label="."):
 
 def buildExampleTree():
     # Building the following binary tree
-    #       1
+    #           1
+    #          / \
+    #         2   3
+    #        / \   \
+    #       4   5   6
     #      / \
-    #     2   3
-    #    / \   \
-    #   4   5   6
+    #     7   8
     # In the original tree, the left subtree of the root node is (2, 4, 5) and 
     # the right subtree is (3, 6). After inverting, the left subtree becomes (3, 6) and 
     # the right subtree becomes (2, 5, 4), effectively swapping the left and right children at each node.
     root = TreeNode(1)
-    root.left = TreeNode(2, TreeNode(4), TreeNode(5))
+    root.left = TreeNode(2, TreeNode(4, TreeNode(7), TreeNode(8)), TreeNode(5))
     root.right = TreeNode(3, None, TreeNode(6))
     return root
 
