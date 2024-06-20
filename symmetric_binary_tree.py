@@ -1,4 +1,6 @@
 #use Depth First Search with both left and right nodes
+# Time complexity O(n) where n is the number of nodes
+# Memory complexity O(h) height of binary tree for any DFS algorithm
 
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
