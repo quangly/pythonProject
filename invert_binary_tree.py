@@ -51,3 +51,23 @@ printTree(root)
 invertTree(root)
 print("\nInverted Tree:")
 printTree(root)
+
+# Original Tree:
+# .: 1
+#     L: 2
+#         L: 4
+#             L: 7
+#             R: 8
+#         R: 5
+#     R: 3
+#         R: 6
+
+# Inverted Tree:
+# .: 1
+#     L: 3
+#         L: 6
+#     R: 2
+#         L: 5
+#         R: 4
+#             L: 8
+#             R: 7
